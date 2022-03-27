@@ -31,3 +31,25 @@ describe('POST /shopping-cart', () => {
       });
   });
 });
+
+describe('GET /shopping-cart', () => {
+  it('can retrieve an item stored in a shopping cart', async () => {
+    const id = uuidv4();
+    const cartItem = { name: 'Phone', price: 500 };
+    const test = supertest(server);
+
+    // add the item to the shopping cart
+    await test
+      .post('/shopping-cart/' + id)
+      .set('Accept', 'application/json')
+      .send(cartItem)
+      .expect(204);
+
+    // check if the item was actually added to this shopping cart
+    await test
+      .get('/shopping-cart/' + id)
+      .set('Accept', 'application/json')
+      .expect('Content-Type', /json/)
+      .expect(200, [cartItem]);
+  });
+});
