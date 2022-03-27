@@ -19,7 +19,7 @@ npm start
 ### Running the tests
 
 ```
-npm run test
+npm test
 ```
 
 ## Related links
