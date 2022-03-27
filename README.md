@@ -8,7 +8,7 @@ This is the backend demo on the topic "Testing frameworks for JavaScript in fron
 
 ### Preparation
 
-1. Install [Node.js](https://nodejs.org/en/) on your local machine, at least version 14.
+1. Install [Node.js](https://nodejs.org/en/) on your local machine, at least version 10.
 2. Clone this repository: `git clone https://github.com/nalenz/dd2482-demo-jstesting-backend`
 3. In this repository, run `npm install` to install all dependencies.
 
