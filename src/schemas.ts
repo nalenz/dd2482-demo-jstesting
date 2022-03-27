@@ -13,3 +13,12 @@ export const shoppingCartItemSchema: JSONSchema7 = {
     },
   },
 };
+
+export interface ShoppingCartItem {
+  name: string;
+  price: number;
+}
+
+export interface ShoppingCart {
+  [cartId: string]: ShoppingCartItem[];
+}

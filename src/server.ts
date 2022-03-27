@@ -1,15 +1,22 @@
 import express, { Request, Response, NextFunction } from 'express';
 import { Validator, ValidationError } from 'express-json-validator-middleware';
-import { shoppingCartItemSchema } from './schemas';
+import { shoppingCartItemSchema, ShoppingCart } from './schemas';
 
 const app = express();
 const port = 3000;
 const validator = new Validator({});
+const shoppingCart: ShoppingCart = {};
 
 app.use(express.json());
 
-app.post('/shopping-cart', validator.validate({ body: shoppingCartItemSchema }), (req, res) => {
+app.post('/shopping-cart/:id', validator.validate({ body: shoppingCartItemSchema }), (req, res) => {
+  if (!shoppingCart[req.params.id]) shoppingCart[req.params.id] = [];
+  shoppingCart[req.params.id].push(req.body);
   res.status(204).end();
+});
+
+app.get('/shopping-cart/:id', (req, res) => {
+  res.status(200).json(shoppingCart[req.params.id] ?? []);
 });
 
 // middleware to handle validation errors
