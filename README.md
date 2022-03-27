@@ -24,11 +24,20 @@ npm test
 
 ## Related links
 
+### Organizational
+
 - [Course repository](https://github.com/KTH/devops-course)
 - [Assignment proposal for this demo](https://github.com/KTH/devops-course/pull/1594)
+
+### Libraries
+
 - [Express documentation](https://expressjs.com)
 - [Jest documentation](https://jestjs.io)
 - [SuperTest documentation](https://github.com/visionmedia/supertest)
+
+### Instructions for testing via CI
+
+- [GitHub Actions for testing Node.js](https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-nodejs-or-python)
 
 ## License
 
