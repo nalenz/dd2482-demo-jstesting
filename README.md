@@ -1,5 +1,7 @@
 # Testing frameworks for JavaScript in frontend and backend – Backend demo
 
+![test workflow](https://github.com/nalenz/dd2482-demo-jstesting-backend/actions/workflows/test.yml/badge.svg)
+
 This is the backend demo on the topic "Testing frameworks for JavaScript in frontend and backend" for the KTH course [DD2482 Automated Software Testing and DevOps](https://www.kth.se/student/kurser/kurs/DD2482?l=en). Developed in collaboration with Elias Bonnici (bonnici@kth.se, [@elibon99](https://github.com/elibon99)).
 
 ## Instructions
