@@ -1,10 +1,26 @@
-import express from 'express';
+import express, { Request, Response, NextFunction } from 'express';
+import { Validator, ValidationError } from 'express-json-validator-middleware';
+import { shoppingCartItemSchema } from './schemas';
 
 const app = express();
 const port = 3000;
+const validator = new Validator({});
 
-app.get('/user', (req, res) => {
-  res.status(200).json({ name: 'john' });
+app.use(express.json());
+
+app.post('/shopping-cart', validator.validate({ body: shoppingCartItemSchema }), (req, res) => {
+  res.status(204).end();
+});
+
+// middleware to handle validation errors
+app.use((err: Error, req: Request, res: Response, next: NextFunction) => {
+  if (err instanceof ValidationError) {
+    res.status(422).json(err.validationErrors);
+    next();
+  } else {
+    // pass error on if it is not a validation error
+    next(err);
+  }
 });
 
 if (require.main === module) {

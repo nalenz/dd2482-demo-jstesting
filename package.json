@@ -24,7 +24,9 @@
   },
   "homepage": "https://github.com/nalenz/dd2482-demo-jstesting-backend#readme",
   "dependencies": {
-    "express": "^4.17.3"
+    "express": "^4.17.3",
+    "express-json-validator-middleware": "^2.2.1",
+    "json-schema": "^0.4.0"
   },
   "devDependencies": {
     "@types/express": "^4.17.13",
