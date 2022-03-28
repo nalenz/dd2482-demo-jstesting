@@ -30,6 +30,10 @@ app.use((err: Error, req: Request, res: Response, next: NextFunction) => {
   }
 });
 
+app.get('/0118-999-881-999-119-7253', (req, res) => {
+  res.status(418).json({ question: 'Did you see that ludicrous display last night?' });
+});
+
 if (require.main === module) {
   // only actually run the server when this file is executed via the command line,
   // but not when testing the server via Jest
